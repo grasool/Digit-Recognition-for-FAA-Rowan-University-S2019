@@ -1,0 +1,41 @@
+Digital Guage Recognition for FAA S2019
+_______________________________________
+Ryan Drexel, Marc Giordano
+Dr. Ghulam Rasool
+Rowan University
+____________________________________________________________
+There are four python scripts used to achieve our results of
+66% correct classification of unlabelled data.
+
+=======================
+data_pocessing.py
+data_processing2.py
+filteringN.py
+mnist_faa_digits.py
+=======================
+
+All scripts were run in Anaconda Spyder for Python 3.6
+
+data_pocessing.py This script uses the original 25x25 pixel images as 
+input and crops them into three 5x7 images, one for each digit. Save
+these to a folder called "unscaledData."
+
+data_processing2.py scales the 5x7 images to 20x28, then adds a black
+boarder on the left and right sides of the image, the boarders are
+each 4 pixels. This makes the output 28x28, compatible with MNIST data.
+Note: most of the project was done only on "dig_3," the rightmost
+display in the original 25x25 image. The scaled images are saved to
+"bigdata" folder.
+
+filteringN.py takes the scaled images and applies various masks and
+filters in order to make the data look more like handwritten data so
+it performs well in an MNIST model. Images are saved to "bigdataFilt."
+
+mnist_faa_digits.py trains a CNN on the MNIST database and labels the 
+unlabelled data from "bigdataFilt" and saves them to "labelled" folder.
+
+Libraries used:
+	Keras
+	cv2
+	numpy
+	matplotlib.pypolt
